@@ -11,7 +11,7 @@ public class IndexModel : PageModel
 
     public IEnumerable<WarehouseRec> Warehouses;
 
-    public record WarehouseRec(string Name);
+    public record WarehouseRec(long Id, string Name);
 
     public IndexModel(ILogger<IndexModel> logger, SqliteConnection connection)
     {
@@ -21,6 +21,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        Warehouses = _connection.Query<WarehouseRec>("SELECT Name FROM warehouses");
+        Warehouses = _connection.Query<WarehouseRec>("SELECT WarehouseId as Id, Name FROM warehouses");
     }
 }

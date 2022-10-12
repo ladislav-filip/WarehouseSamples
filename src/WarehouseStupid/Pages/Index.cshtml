@@ -5,11 +5,17 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Warehouse stupid solution</h1>
+    
+    <a class="btn btn-primary" asp-page="Warehouse">Nový sklad</a>
+    
 </div>
 
+<ul>
 @foreach (var w in Model.Warehouses)
 {
-    <div>@w.Name</div>
+        <li>
+         <a asp-page="Warehouse" asp-route-id="@w.Id" >@w.Name</a>   
+        </li>
 }
+</ul>

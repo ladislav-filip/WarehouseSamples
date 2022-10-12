@@ -1,0 +1,18 @@
+﻿@page
+@model WarehouseStupid.Pages.Warehouse
+@{
+    ViewData["Title"] = "Warehouse";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Warehouse</h1>
+</div>
+
+<div>
+    <form method="post">
+        <input type="text" asp-for="Data.Name" placeholder="Zadejte název skladu"/>
+        <input class="btn btn-primary" type="submit"/>
+        
+        <input type="hidden" asp-for="Data.Id" />
+    </form>
+</div>
