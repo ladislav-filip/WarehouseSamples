@@ -1,8 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BD4AFB1A-F81A-4A8E-ABFC-844D0FA07E0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseStupid", "src\WarehouseStupid\WarehouseStupid.csproj", "{9E1B2A50-2684-4821-B35A-2A66BA925DED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E1B2A50-2684-4821-B35A-2A66BA925DED} = {BD4AFB1A-F81A-4A8E-ABFC-844D0FA07E0B}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E1B2A50-2684-4821-B35A-2A66BA925DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E1B2A50-2684-4821-B35A-2A66BA925DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E1B2A50-2684-4821-B35A-2A66BA925DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E1B2A50-2684-4821-B35A-2A66BA925DED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
