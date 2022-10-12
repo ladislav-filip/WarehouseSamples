@@ -1,17 +1,19 @@
-using Microsoft.Data.Sqlite;using WarehouseStupid.Infrastructure;
+using WarehouseStupid.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<SqliteConnection>(srv => new SqliteConnection("Data Source=warehouse.sqlite"));
+builder.Services.AddSingleton<DbConnectionFactory>();
+builder.Services.AddScoped(srv => srv.GetRequiredService<DbConnectionFactory>().CreateConnection());
 
 var app = builder.Build();
 
-var dbFilePath = "Data Source=" + Path.Combine(app.Environment.ContentRootPath, "warehouse.sqlite"); 
-var conn = new SqliteConnection(dbFilePath);
-await conn.CreateAndSeedAsync();
+// first initialize database
+await app.Services.GetRequiredService<DbConnectionFactory>()
+    .CreateConnection()
+    .CreateAndSeedAsync();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
