@@ -11,9 +11,9 @@ builder.Services.AddScoped(srv => srv.GetRequiredService<DbConnectionFactory>().
 var app = builder.Build();
 
 // first initialize database
-await app.Services.GetRequiredService<DbConnectionFactory>()
-    .CreateConnection()
-    .CreateAndSeedAsync();
+// await app.Services.GetRequiredService<DbConnectionFactory>()
+//     .CreateConnection()
+//     .CreateAndSeedAsync();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
