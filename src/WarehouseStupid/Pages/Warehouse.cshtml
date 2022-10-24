@@ -5,14 +5,25 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Warehouse</h1>
+    <h1 class="display-4">Sklad: @(Model.Data == null ? "** Nový sklad" : Model.Data.Name)</h1>
 </div>
 
-<div>
-    <form method="post">
-        <input type="text" asp-for="Data.Name" placeholder="Zadejte název skladu"/>
-        <input class="btn btn-primary" type="submit"/>
+
+    <div>
+        <form method="post">
+            <div class="mb-3">
+                <label for="Data.Name" class="form-label">Název skladu</label>
+                <input id="Data.Name" type="text" class="form-control" asp-for="Data.Name" placeholder="Zadejte název skladu"/>
+            </div>
+            <input class="btn btn-success" type="submit"/>
+            <a asp-page="Index" class="btn btn-secondary" role="button">Storno</a>
+
+            <input type="hidden" asp-for="Data.Id"/>
+            @if (Model.Data != null)
+            {
+                <button class="btn btn-primary">Pozice</button>
+            }
+        </form>
         
-        <input type="hidden" asp-for="Data.Id" />
-    </form>
-</div>
+        
+    </div>
