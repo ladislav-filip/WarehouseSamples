@@ -6,16 +6,24 @@
 
 <div class="text-center">
     <h1 class="display-4">Warehouse stupid solution</h1>
-    
-    <a class="btn btn-primary" asp-page="Warehouse">Nový sklad</a>
-    
+
 </div>
 
-<ul>
-@foreach (var w in Model.Warehouses)
-{
-        <li>
-         <a asp-page="Warehouse" asp-route-id="@w.Id" >@w.Name</a>   
-        </li>
-}
-</ul>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" role="button" asp-page="Warehouse">Nový sklad</a>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col">
+        <ul class="list-group">
+        @foreach (var w in Model.Warehouses)
+        {
+                <li class="list-group-item">
+                 <a asp-page="Warehouse" asp-route-id="@w.Id" >@w.Name</a>   
+                </li>
+        }
+        </ul>
+    </div>
+</div>
