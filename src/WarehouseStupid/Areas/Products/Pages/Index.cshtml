@@ -1,0 +1,46 @@
+﻿@page
+@model WarehouseStupid.Areas.Products.Pages.ProductsIndexModel
+@{
+    Layout = "_Layout";
+}
+
+
+@{
+    ViewData["Title"] = "Produkty";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Produkty</h1>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" role="button" asp-page="Warehouse">Nový produkt</a>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col">
+        
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Kód</th>
+                <th scope="col">Název</th>
+                <th scope="col">Váha</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var w in Model.Products)
+            {
+                <tr>
+                    <td>@w.Code</td>
+                    <td>@w.Name</td>
+                    <td>@w.Weight</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
