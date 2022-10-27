@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.Sqlite;
 using Dapper;
 
-namespace WarehouseStupid.Pages;
+namespace WarehouseStupid.Areas.Warehouses.Pages;
 
 public class Warehouse : PageModel
 {

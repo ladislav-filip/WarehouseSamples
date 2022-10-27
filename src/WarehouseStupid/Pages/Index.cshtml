@@ -11,19 +11,12 @@
 
 <div class="row">
     <div class="col">
-        <a class="btn btn-primary" role="button" asp-page="Warehouse">Nový sklad</a>
+        <a class="btn btn-primary" role="button" asp-area="Warehouses" asp-page="Index">Sklady</a>
     </div>
 </div>
 
-<div class="row pt-3">
+<div class="row mt-2">
     <div class="col">
-        <ul class="list-group">
-        @foreach (var w in Model.Warehouses)
-        {
-                <li class="list-group-item">
-                 <a asp-page="Warehouse" asp-route-id="@w.Id" >@w.Name</a>   
-                </li>
-        }
-        </ul>
+        <a class="btn btn-primary" role="button" asp-area="Products" asp-page="Index">Produkty</a>
     </div>
 </div>

@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewData["Title"] = "Sklady";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sklady</h1>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" role="button" asp-area="Warehouses" asp-page="Warehouse">Nový sklad</a>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col">
+        <ul class="list-group">
+            @foreach (var w in Model.Warehouses)
+            {
+                <li class="list-group-item">
+                    <a asp-area="Warehouses" asp-page="Warehouse" asp-route-id="@w.Id" >@w.Name</a>   
+                </li>
+            }
+        </ul>
+    </div>
+</div>
