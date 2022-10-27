@@ -5,7 +5,7 @@ using Dapper;
 
 namespace WarehouseStupid.Areas.Warehouses.Pages;
 
-public class Warehouse : PageModel
+public class WarehouseDetailModel : PageModel
 {
     private readonly SqliteConnection _connection;
 
@@ -17,7 +17,7 @@ public class Warehouse : PageModel
     
     [BindProperty] public WarehouseModel? Data { get; set; }
 
-    public Warehouse(SqliteConnection connection)
+    public WarehouseDetailModel(SqliteConnection connection)
     {
         _connection = connection;
     }

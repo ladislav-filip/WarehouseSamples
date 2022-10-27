@@ -4,16 +4,16 @@ using Microsoft.Data.Sqlite;
 
 namespace WarehouseStupid.Areas.Warehouses.Pages;
 
-public class IndexModel : PageModel
+public class WarehouseIndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly ILogger<WarehouseIndexModel> _logger;
     private readonly SqliteConnection _connection;
 
     public IEnumerable<WarehouseRec> Warehouses;
 
     public record WarehouseRec(long Id, string Name);
 
-    public IndexModel(ILogger<IndexModel> logger, SqliteConnection connection)
+    public WarehouseIndexModel(ILogger<WarehouseIndexModel> logger, SqliteConnection connection)
     {
         _logger = logger;
         _connection = connection;
