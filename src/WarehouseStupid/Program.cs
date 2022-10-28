@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using WarehouseStupid.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,15 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<DbConnectionFactory>();
 builder.Services.AddScoped(srv => srv.GetRequiredService<DbConnectionFactory>().CreateConnection());
+builder.Services.AddScoped<UserManager>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
+        opt =>
+        {
+            opt.LoginPath = "/Account/Login";
+            opt.LoginPath = "/Account/Logout";
+        });
 
 var app = builder.Build();
 
@@ -25,6 +35,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseRouting();
 

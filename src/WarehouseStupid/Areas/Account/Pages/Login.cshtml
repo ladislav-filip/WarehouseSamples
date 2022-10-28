@@ -1,0 +1,38 @@
+﻿@page
+@model LoginModel
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewData["Title"] = "Přihlášení";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Přihlášení</h1>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form method="post">
+            <div class="mb-3">
+                <label for="Username" class="form-label">Uživatelské jméno</label>
+                <input id="Username" type="text" class="form-control" asp-for="Data.UserName" placeholder="Zadejte uživatelské jméno"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Password" class="form-label">Heslo</label>
+                <input id="Password" type="password" class="form-control" asp-for="Data.Password" placeholder="Zadejte heslo"/>
+            </div>
+            
+            <input class="btn btn-success" type="submit"/>
+            
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        @Html.ValidationSummary(false, "")
+    </div>
+</div>

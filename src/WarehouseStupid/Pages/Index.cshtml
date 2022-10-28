@@ -9,14 +9,17 @@
 
 </div>
 
-<div class="row">
-    <div class="col">
-        <a class="btn btn-primary" role="button" asp-area="Warehouses" asp-page="Index">Sklady</a>
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" role="button" asp-area="Warehouses" asp-page="Index">Sklady</a>
+        </div>
     </div>
-</div>
 
-<div class="row mt-2">
-    <div class="col">
-        <a class="btn btn-primary" role="button" asp-area="Products" asp-page="Index">Produkty</a>
+    <div class="row mt-2">
+        <div class="col">
+            <a class="btn btn-primary" role="button" asp-area="Products" asp-page="Index">Produkty</a>
+        </div>
     </div>
-</div>
+}

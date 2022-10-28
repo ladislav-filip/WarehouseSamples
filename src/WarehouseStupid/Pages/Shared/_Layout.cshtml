@@ -25,12 +25,24 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Warehouses" asp-page="/Index">Sklady</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Products" asp-page="/Index">Produkty</a>
-                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Warehouses" asp-page="/Index">Sklady</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Products" asp-page="/Index">Produkty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Account" asp-page="/Logout">Odhlásit</a>
+                        </li>                        
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Account" asp-page="/Login">Přihlásit</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
